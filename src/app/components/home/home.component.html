@@ -1,0 +1,28 @@
+<!-- Created By : Sangwin Gawande (https://sangw.in) -->
+
+<!-- Enlace a la hoja de estilos local (home.component.css) -->
+<link rel="stylesheet" href="home.component.css">
+
+<!-- Enlace a una hoja de estilos externa (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Barra lateral (Sidebar) -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2" style="z-index:3;width:250px;" id="mySidebar">
+	<!-- Enlace a un sitio externo con una imagen de logo -->
+	<a href="https://www.upds.edu.bo/" target="_blank"><img src="assets/login.jpg" id="login-image" class="logo"></a>
+	<!-- Enlace de la barra lateral para la "Lista de usuarios" -->
+	<a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active == '/')}" routerLink="/"> <i class="w3-medium fa fa-user"></i>  Lista de usuarios</a>
+	<!-- Enlace de la barra lateral para "Añadir nuevo usuario" -->
+	<a class="w3-bar-item w3-button" routerLink="/add" [ngClass]="{'w3-teal': (active == '/add')}"> <i class="w3-medium fa fa-plus"></i>  Añadir nuevo usuario</a>
+	<!-- Enlace de la barra lateral para "Cerrar Sesión" -->
+	<a class="w3-bar-item w3-button" (click)="logOut()"><i class="w3-medium fa fa-sign-out"></i>  Cerrar Sesión</a>
+</nav>
+
+<!-- Contenido principal (Main Content) -->
+<div class="w3-main" style="margin-left:250px;">
+	<div class="w3-container">
+		<!-- Ruta de salida para cargar componentes secundarios -->
+		<router-outlet></router-outlet>
+	</div>
+</div>
+
